@@ -1,0 +1,83 @@
+--------------------------Kapselung----------------------------------------
+- Kapselung bedeutet, dass dem Nutzer eines Objekts nur solche Methoden und Datenfelder zugänglich gemacht werden, die für ihn von Bedeutung sind.
+- Deine bisherigen Klassen hatten nur statische Methode. Die nennt man auch "Klassenmethoden". Daneben gibt es noch "Klassenfelder" bzw. "Klassenvariablen", bei denen steht wie
+Klassenmethoden auch das Wort "static" davor. Klassenfelder und Klassenmethoden kann man ansprechend bzw. aufrufen, sobald man die Klasse zur Verfügung hat.
+- In Java gehört jedes Objekts zu einer Klasse. Genauer gesagt, ist die Klasse der Datentyp des Objekt.
+- Ein Objekt ist ein instanz der Klasse.
+- Das englische Class wird im deutschen mit klasse übersetzt, ist aber eher im Sinne von Klassifizierung oder Kategorie gemeint. Klasse dienen dazu, zu definieren, wie Objekte aussehen sollen. 
+- Vereinfacht gesagt sind Klassen so etwas wie eigene Datentypen, die du als Programmierer selbst definieren kannst. Kurz: Eine Klasse stellt sozusagen die Schablone oder Bauplan für Objekte dar.
+
+- Methode und Datenfelder, die nicht "static" sind, nennt man auch "Objektmethoden" (oder Objektbezogenen Methoden) und "Objektfelder" bzw. "Objektvariablen". Um Objektfelder und Objektmethoden zu verwenden, reicht dir nicht die Klasse, du brauchst zuerst ein Objekt. Bevor wir aber ein Objekt erstellen können , brauchen wir die Klasse.
+- Ein Objekt zu einer Klasse besteht aus Daten und Funktionen. Die Daten heißen "Felder" oder "Attribut" oder "Eigenschaften" oder eben "Objektvariablen", und die Funktionen heißen "Methode" bzw. "Objektenmethoden"
+- Die Belegung der Objektvariablen stellt den "Zustand" eines Objekts dar. Zum Beispiel: Eine Katze hat eine "farbe", ein "alter".
+- Die Belegung der Objektmethoden spiegeln sein Verhalten wider. Zum Beispiel eine Katze kann "fressen()", "miauen()"
+- String-Variablen zum Beispiel wären Referenztypen.
+
+-       fotoApparat.bildStabilisiert = true;      Dies sollte vermeinden, denn der wichtiger Grung ist, dass dieser unbefugte Zugriff auf die Datenfelder dazu führen könnte, dass das Objekt 
+        fotoApparat.displayGroesse = 7.5;         einen "ungültigen Zustand" bekommt. Zum Beispiel :  fotoApparat.megaPixel = -10;
+        fotoApparat.marke = "SoNie";
+        fotoApparat.megaPixel = 10;
+
+---------------------------Setter und Getter ----------------------------------------------------------------
+- Die Setter- bzw. Getter-Methode sind die Arten von Methode, die den Eingeschaften von Objektvariable(Datenfelder) dynamisch ändern(setzen oder set) oder zurückgeben(get) können.
+- um die Daten in einem Objekt zu kapseln, braucht man die "Setter-" oder "Getter"-Methoden und diese Daten können jetzt nur über Methoden geändert werden.
+- Mit "this" sprichst du das aktuelle Objekt an. Du hast sicherlich gemerkt, dass wir eben im Setter zwei Variablen mit dem gleichen Name (megaPixel) hatten: einmal den Parameter und einmal die Objektvariable. Damit der Compiler weiß, welche Variable du jeweils meinst, kannst du Objektvariablen referenzieren, indem du das "this" davor schreibst.
+- Das hat auch den Vorteil, dass du dir nicht immer einen neuen Namen für deine Parameter ausdenken musst.
+- Warum Setter und Getter von Vorteil sind: Du kannst zu Beispiel in der "Setter-Methode" die Parameter validieren, also überprüfen, ob der übergebene Parameter überhaupt gültig ist.
+- Nimm Klassenvariablen für Dinge, die allgemein für alle Instanzen der Klasse gelten, und Objektvariablen für Dinge, die sich von Objektinstanz zu Objektinstanz unterscheiden.
+
+-------------------------------Sichtbarkeit von Variablen und Methoden---------------------------------------------------------------------------------------------------------
+- Mit "private" markierte Variablen oder Methoden sind nur innerhalb der Klasse zugänglich, in der sie definiert sind und in keiner anderen Klasse.
+- Mit "public" markierte Variablen und Methoden sind von überall zugänglich.
+- Mit "protected" sind die Variable und Methoden für anderen Klassen innerhalb des gleichen Packages sichtbar, aber nicht fürKlassen in anderen Packages. Ausnahme:  Im Fall von "protected" sind sie zusätzlich in Unterklassen sichtbar, auch wenn die sich in anderen Packages befinden.
+
+--------------------------------------Konstruktor-----------------------------------------------------------------------------------------------
+Warum nun eigene Konstruktorschreiben?
+- Im Konstruktor kannst du die Objektvariablen initialisieren. Du könntest die Kamera von eben direkt mit Standardwerten vorbelegen.
+- Konstruktor mit Parameter sind sinnvoll, wenn die Objektvariablen nicht mit Standardwerten, sondern aus den Parametern initialisiert werden sollen.
+- Mit "super" rufst du den Standardkonstruktor dieser Oberklasse.
+- Jede Klasse , die du erstellt , hat immer eine direkte Oberklasse. All bisheringen Klassen, die du erstellt hast, haben implizit die Oberklasse "java.lang.Object". Das ist die Mutter aller Klassen. Mit "Super" im Konstruktor von "FotoApparat" wird also der Konstruktor Object aufgerunfen, weil Object die direkte Oberklasse von FotoApparat ist.
+- Eine Klasse kann immer nur eine direkte Oberklasse haben. Aber diese Oberklasse kann wiederum auch eine Oberklasse haben und so weiter.
+- Du darfst natürlich auch in deinem Konstruktor nicht vergessen, die Eingabeparameter zu valiederen. Denn sonst könnte ja jemand diese Stelle nutzen, um ungültige BrennweitenWerte zu übergeben. Am besten, du rufst den entsprechenden Setter direkt vom Konstruktor auf.
+- Die Klasse "Object" bringt direkt ein Paar Methoden mit, die quasi jeder klasse, die du erstellt, gemeinsam sind. Allerdings machen die meinsten dieser Methode nicht viel und sind eher dazu gedacht, dass du in deiner eigenen Klasse eine eigene Variante implementierst. Zum Beispiel: "equals()","clone()","finalize()","getclass()","hashCode()","notify()","notifyAll()","toString","wait()","wait(long timeout)","wait(long timeout, int nanos)",
+- Mit der Annotation "@Override" sagst du dem Compiler, dass du eine Methode überschreiben möchtest. auch wenn du die Annotion weglässt, merkt der compiler in der Regel, dass du das möchtest.
+
+------------------------------------ Fluent Interface -------------------------------------------------------------------------------------------------------------------
+- "Fluent Interface": ist das Verketten von Methoden-Aufrufen. Gegenüber dem Konstrüktor hast du den Vorteil, dass du dir aussuchen kannst, welche Werte du setzt. Gegenüber den normalen Setter-Methoden sparst du dir etwas Schreibarbeit.
+
+public FotoApparat setMarke(String marke){
+	this.marke = marke;
+	return this;
+}
+
+FotoApparat fotoApparat = new FotoApparat()
+fotoApparat.setBrennweiten(18, 200);
+	   .setBildStabilisiert(true);
+	   .setDisplayGroesse(7.5);
+           .setMarke("SoNie");
+	   .setMegaPixel(18);
+
+- "UML(Unified Modeling Language)": ist eine Modellierungssprache, die hauptsächlich zur Beschreibung von Softwaresystemen verwendet wird. Das "Klassendiagramm" wird verwenden, um die Beziehung zwischen Klassen dazustellen.
+
+--------------Referenzdatentypen, Heap, Garbage-Collection, Destruktoren--------------------------------
+- der "Heap" ist ein spezielle Speicherbreich, auf dem alle Objekte abgelegt werden. Immer, wenn du "new" verwendest, erzeugt du ein neues Objekt. Referenzvariablen sind also nur "Verweis auf die Objekte". und die genaue Zuordnung von Variable zu Objekt machst du das "=". Das bewirkt, dass deine Variable "Katze" einen Verweis auf das Objekt einthält, das mit "new Katze()" erzeugt wurde.
+- Ältere Lollegen und C-/C++-Programmierer nennen soclche Verweise auch "Zeiger".
+- Du kannst auch mehrere Referenzen auf das gleiche Objekt zeigen lassen. Mit "Katze gleicheKatze = katze;" erstellt du zum Beispiel eine Referenzvariable, die auf das gleiche Objekt auf dem Heap zeigt wie die Variable "Katze".
+- Der Heap ist der Speicherort für alle Objekt. Verschiedene Referenzvariablen können auf unterschiedliche Objekte oder dasselbe Objekt zeigen.
+- Du kannst auch eine Referenzvariable anlegen, die (noch) keinen Verweis enthält: "private Katze katzenreferenzOhneObjekt". Du kannst auch nur ein Objekt auf dem Heap anlegen ohne Referenzvariable: "new Katze". Wobei Letzteres nicht sonderlich sinnvoll ist, denn ohne Referenzvariable wirst nicht mehr auf das Objekt zugreifen können. Das ist dann sozusagen "lost in Heap".
+- Wenn der "Heap" zu voll ist, werden alle Ojekte, die keine Referenz mehr haben oder nicht mehr benötigt , von der "Garbage Collection" gelöscht.
+- "Der Garbage Collection" ist ein Mechanismus in Java, der dafür sorgt, dass die Objekte auf dem "Heap" regelmäßig aufgeräumt werden.
+- "Destruktoren" gibt es in Java zwar nicht. Aber es gibt zumindest eine "finalize()-Methode", die von "java.lang.object" geerbt wird. Diese Methode wird laut Spezifikation aufgerufen, kurz bevor die "Garbage Collection" ein Obekt aus dem Heap entfernt. 
+- Es ist nämlich nicht sicher, dass nicht gebrauchte Ojkete von der "Garbage Collection" gelöscht werden. Sie können gelöscht werden, ja aber  ob und wann, das ist nicht sicher. Deswegen du dich nicht darauf verlassen, dass die "finalize()-Methode" aufegrufen wird.
+
+----------------------------------------Der Stack------------------------------------------------------------------------
+- Der Stack ist ein spezieller Speicherbereich, auf dem die JVM die Methodenaufrufe stapelt.
+- Allgemein gesprochen ist "Stack" ein Speichertyp, bei dem immer auf die zuletzt abgelegten Daten zugegriffen werden kann. Das heißt, er ist ein Stapelspeicher, ein Stapel von Daten, und was zuletzt draufgelegt wurde, kommt als Erstes wieder runter. Das nennt man auch das "Last-in-first-out"-Prinzip (LIFO). Für Methodenaufrufe passt das insofern, weil die aufgerufene Methode die erste ist, die wieder beendet wird.
+
+**Wie bekommst du Zugriff auf den Stack**
+- 1. "Im Fall eines nicht abgefangene Fehlers": Wenn ein Fehler geworfen wird und der Fehler nicht abgefangen wird, bekommst du auf der Fehlerkonsole einen sogenannten "Stacktrace", quasi ein "Auszug aus dem Stack", über den du zurückverfolgen kannst, welche Methode den Fehler produziert hat.
+- 2. "In Eclipse natürlich": Im Eclipse-Debug-Modus hast du in der Debug-View einen Überblick über den Stack und kannst sogar zwischen den verschiedene Methode, die auf dem Stack liegen, hin und her springen.
+- 3. "Über eine Helfer-Methode": Mit der Helfermethode "Thread.dumStack()" kannst du so tun, als ob die aktuelle Methode einen Fehler wirft und diesen auf der Konsole ausgibt.
+- Neben den Methoden werden auf dem "Stack" auch die Parameter der jeweiligen Methode und die lokalen Variablen(also die, die innerhalb der Methode angelegt werden) gespeichert. Lokale Variablen, die einen Primitive Daten-typ haben, werden mitsamt Wert auf dem "Stack" gespeichert. Bei lokalen Variablen, die auf einen Referenztyp basieren, wird nur die Referenz, aber nicht das gesamte Objekt auf dem Stack gespeichert. Objekte liegen immer auf dem Heap!
+- "Lokale Variable von primitive Datentypen" werden komplette auf dem Stack gespeichert.
+- Alles, was du nur "innerhalb einer Methode" brauchst, wird auf dem "Stack" gespeichert, alles andere auf dem "Heap".

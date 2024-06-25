@@ -1,0 +1,24 @@
+- Eclipse herunterladen: www.eclipse.org/downloads
+- Du kannst dir in diesem Fall aber den Java-Support über ein Plig-in hinzuinstallieren. Mehr dazu im Downloadbereich unter: www.rheinwerk-verlag.de/4975
+- "Ein Wokspace" ist ein Ordner, in dem Eclipse Informationen über deine Projekte verwaltet.
+
+- "Die Workbench" ist der Dreh- und Angelpunkt für die Entwicklung. Von hier aus kannst du verschiedene Perspektiven und Views für die unterschiedlichsten Anwendungszwecke öffen. "Views" sind einfach kleine (oder auch größere) Fenster, die jeweils einen bestimmten Zweck erfüllt. "Eine Perspektive" ist eine Zusammenstellung verschiedener Views.
+
+- "System.err.println()" ist dafüt gedacht, Fehler auf die Konsole zu schreiben.
+
+- "print()" macht das Gleiche wie "println()", aber keinen Zeilenumbruch an die Ausgabe hängt.
+
+- Es gibt verschiedene Möglichkeiten, die Daten im Programm zu bekommen:
+
+1. Möglichkeit 1: Startparameter
+Wenn di dir von Anfang an sicher bist, was du deinem Programm übergeben möchtest, kannst du ihm Startparameter mitgeben, die dir dann in der Main Main-Methode über Stringarry "String[] args" bereitgestellt werden. "args" ist ein Array von Strings, vereinfacht gesagt so etwas wie eine Liste.
+
+2. Möglichkeit 2: Eingabeströme
+Startparameter müssen- wie der Name schon sagt - bereits beim Start deinem Programm übergeben werden. Eine wirkliche Interaktion kriegst du so nicht hin. Dazu brauchst du etwas anderes. Die Zaubermethode heißt: System.in.read() . Damit kannst du einzelne Zeichen von der Kommandozeile einlesen.
+
+- "out", "err" und "in" sind öffentliche Objektinstanzen innerhalb der Klasse "System". "out" und "err" sind von Typ PrintStream, und "in" ist vom Typ InputStream.
+
+- Textadventures sind Computerspiele; die du dir wie interaktive Bücher vorstellen kannst. Dem Spieler werden statt Grafiken lediglich Textabschnitte präsentiert. Über Tastatureingaben kann der Spieler Entscheidungen treffen und damit das Spielgeschehen beeinflussen. Textadventures sind absoluter Kult.
+
+- Du kannst alle Quelletexte aus dem Buch im Bonus bereich unter: www.rheinwerk-verlag.de/4975 herunterladen.
+ 

@@ -1,0 +1,9 @@
+Unterschiede
+
+Absoluter Pfad:
+Startet immer vom Wurzelverzeichnis.
+Unabhängig vom aktuellen Arbeitsverzeichnis.
+
+Relativer Pfad:
+Startet vom aktuellen Arbeitsverzeichnis.
+Abhängig vom aktuellen Arbeitsverzeichnis.

@@ -1,0 +1,41 @@
+- Eine ganz wichtige Sache, die du dir gleich zu Anfang merken kannst, ist : Java ist eine sogennante statisch typisierte Programmiersprache. Das bedeutet, das jede Variable einen festen Typ hat (deswegen typisiert) und dieser Typ bereits zur Übersetzungszeit bekannt ist (deswegen statisch).
+
+ - Datentype Variablename = wert; Hierbei musst du zwei Dinge beachten:
+ 1. Der Wert, den einer Variablen überhaupt geben kannst, hängt von dem jeweiligen Datentyp ab.
+ 2. Du kannst einer Variablen nicht beliebige Namen geben, denn manche Namen sind Bestandteil der Sprache Java und damit reserviert. 
+
+ - Arten von Datentypen: In Java gibt es zwei Arten von Datentypen: "Primitive Datentyp" und "Referenzdatentyp". 
+
+ - "Zahlen", "Zeichen" und "Wahrheitswerte" nennt man primitive Datentypen oder auch elementare Datentypen oder Basisdatentpyen. Letztendlcih sind das also die Dinge, aus denen Objekte zusammengebaut werden.In Java gibt es sechs verschiedene Typen dafür: "byte, short", "int", "long" für Zahlen ohen Nachkommastellen (Ganzzahlen), "float", "double" für Zahlen mit Nachkommastellen (Fließkommastellen). Die verschiedenen Typen geben an, wie viel Speicherplatz für jeweilige Variable bereitgestellt wird
+
+ - Beim Ganzzahlige, wenn du ein "long" anlegen möchtest, musst du das explizit angeben, indem du entweder ein kleines "l" oder "L" an die Zahl hängst. Aus Gründen der Lesbarkeit empfehle ich dir aber, ein großes "L" zu verwenden, das kleine "l" kann doch zu schnell mit einer 1 verwechselt werden.
+
+ - Bei den Fleißkommzahlen ist "double" der Standardatentyp. Wenn du ein float haben möchtes, musst du entweder ein kleines "f" oder großes "F" an die Fließkommzahl hängen.
+
+ - Lesbarkeit von langen Zahlen: Um die Lesbarkeit der Zahlen zu erhöhen, ist es seit Java 7 sogar möglich, an (fast) beliebigen Stellen einer Zahl einen Unterstrich (_) einzufügen. Nimm als Beispiel Kreditkartennummer: Die haben 16 Stellen, und das wird schnell etwas übersichtlich mit der normalen Schreibweise:
+ * long kreditKartenNummer = 2345234523452345L;
+ * Die Version mit unterstrichen lässt sich dagegen schon viel besser lesen:
+ long kreditKartenNummer = 2345_2345_2345_2345L;
+
+ -******* Binär, Oktoal, Dezimal und Hexadezimal *******************
+
+ * 0b/ 0B : Binärsystem       (Basis 2)  -> 0B00011000
+ * 0      : Oktalsystem       (Basis 8)  -> 030
+ *        : Dezimalsystem     (Basis 10) -> 24
+ * 00/ 0X : Hexdezimalsystem  (Basis 16) -> 0X18
+
+ Beispiel:
+ - int oktalZahl = 0555;
+ - int binaerZahl = 0B101101101;
+ - int dezimalZahl = 365;
+ - int hexZahl = 0X16D; 
+
+ - Eine Anwendungsfall, bei dem zum Beispiel Binärzahlen vorteil sind, ist die sogennante Bitmaskierung.
+ - Die kompletten Code Conventions kannst du dir hier runterladen: "www.oracle.com/technetwork/java/codeconvtoc-136057.html". Abschnitt 9 davon enthält die Regeln für Namen.
+
+- Temporäre Variablen, die wirklich nur innerhalb eines sehr kurzen Quelltextabschnitts vorkommen, dürfen auch mal kürzer sein.
+
+- ***** Genau rechnen mit BigDecimal *******************
+- Doch, für Anwendung, in denen hinter dem Komma alles exakt sein soll bietet Java die Klasse "BigDecimal" an.
+- Für den Augenblick: zur Klasse BigDecimal eine konkrete BigDecimal-Zahl. Solch eine "große Dezimalzahl" ist eine instanze der Klasse BigDecimal.
+- Merke dir also: Wenn du wirklich genau rechnen möchtest, verwende besser "BigDecimal" als "float" und "double".

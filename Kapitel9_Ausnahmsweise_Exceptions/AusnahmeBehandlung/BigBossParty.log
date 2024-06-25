@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-05T14:55:49.625045500Z</date>
+  <millis>1714920949625</millis>
+  <nanos>45500</nanos>
+  <sequence>0</sequence>
+  <logger>de.galileocomputing.schroedinger.java.kapitel09.zweite.exception.BigBossParty</logger>
+  <level>INFO</level>
+  <class>de.galileocomputing.schroedinger.java.kapitel09.zweite.exception.BigBossParty</class>
+  <method>teilnehmen</method>
+  <thread>1</thread>
+  <message>Teilnehmer: Frau Schmitz</message>
+</record>
+<record>
+  <date>2024-05-05T14:55:49.681556100Z</date>
+  <millis>1714920949681</millis>
+  <nanos>556100</nanos>
+  <sequence>1</sequence>
+  <logger>de.galileocomputing.schroedinger.java.kapitel09.zweite.exception.BigBossParty</logger>
+  <level>WARNING</level>
+  <class>de.galileocomputing.schroedinger.java.kapitel09.zweite.exception.BigBossParty</class>
+  <method>teilnehmen</method>
+  <thread>1</thread>
+  <message>Frau Schmitz nicht eingeladen.</message>
+</record>
+</log>
